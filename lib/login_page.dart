@@ -18,11 +18,17 @@ class LoginPage extends StatelessWidget {
           children: [
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(
+                labelText: 'Email',
+                prefixIcon: Icon(Icons.email), // Tambahkan ikon email
+              ),
             ),
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(
+                labelText: 'Password',
+                prefixIcon: Icon(Icons.lock), // Tambahkan ikon kunci
+              ),
               obscureText: true,
             ),
             SizedBox(height: 20),
@@ -38,7 +44,7 @@ class LoginPage extends StatelessWidget {
                   // Show error message
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Invalid email or password.'),
+                      content: Text('Email or password is invalid.'),
                     ),
                   );
                 }
